@@ -1,0 +1,22 @@
+
+{% extends "base.html" %}
+
+
+{% block head%} 
+<title>Task Manager</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+{%endblock%}
+
+
+{% block body%} 
+    <div class="container">
+        <h1>Welcome to Task Manager</h1>
+        <p>This simple app allows you to add tasks and save them to the database.</p>
+
+        <form action="/add-task" method="POST">
+            <input type="text" name="task" placeholder="Enter your task" required>
+            <button type="submit">Add Task</button>
+        </form>
+    </div>
+{%endblock%}
+
